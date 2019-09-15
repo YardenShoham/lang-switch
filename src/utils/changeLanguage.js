@@ -133,8 +133,6 @@ class Changer {
 
     init(fromLanguage, toLanguage) {
         this.languageMap = new Map();
-        console.log(this.languageMap);
-
         for (let i = 0; i < 40; i++) {
             this.languageMap.set(
                 this.languages[fromLanguage][i],

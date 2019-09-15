@@ -1,9 +1,12 @@
 import React, { Component } from "react";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.min.css";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.css";
 import LanguagePair from "./components/LanguagePair";
 import LanguageChanger from "./components/LanguageChanger";
 import Changer from "./utils/changeLanguage";
+import CopyButton from "./components/common/CopyButton";
 
 class App extends Component {
     state = {
@@ -59,6 +62,15 @@ class App extends Component {
         });
     };
 
+    handleCopy = async () => {
+        try {
+            await navigator.clipboard.writeText(this.state.toValue);
+            toast.success("📃 Copied to clipboard!");
+        } catch (ex) {
+            toast.error("Failed to copy.");
+        }
+    };
+
     componentDidMount() {
         this.languageChanged();
     }
@@ -72,6 +84,7 @@ class App extends Component {
         } = this.state;
         return (
             <React.Fragment>
+                <ToastContainer autoClose={2200} />
                 <nav className="navbar navbar-dark bg-dark">
                     <span className="navbar-brand clickable">Lang Switch</span>
                 </nav>
@@ -89,6 +102,14 @@ class App extends Component {
                         fromValue={fromValue}
                         toValue={toValue}
                     />
+                    <div className="form-group">
+                        <div className="row">
+                            <div className="col"></div>
+                            <div className="col">
+                                <CopyButton onClick={this.handleCopy} />
+                            </div>
+                        </div>
+                    </div>
                 </main>
             </React.Fragment>
         );

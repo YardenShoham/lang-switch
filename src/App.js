@@ -7,6 +7,8 @@ import LanguagePair from "./components/LanguagePair";
 import LanguageChanger from "./components/LanguageChanger";
 import Changer from "./utils/changeLanguage";
 import CopyButton from "./components/common/CopyButton";
+import PasteButton from "./components/common/PasteButton";
+import { async } from "q";
 
 class App extends Component {
     state = {
@@ -71,6 +73,21 @@ class App extends Component {
         }
     };
 
+    handlePaste = async () => {
+        try {
+            this.setState(
+                { fromValue: await navigator.clipboard.readText() },
+                () => {
+                    this.setState({
+                        toValue: Changer.change(this.state.fromValue)
+                    });
+                }
+            );
+        } catch (ex) {
+            toast.error("Failed to paste.");
+        }
+    };
+
     componentDidMount() {
         this.languageChanged();
     }
@@ -104,7 +121,9 @@ class App extends Component {
                     />
                     <div className="form-group">
                         <div className="row">
-                            <div className="col"></div>
+                            <div className="col">
+                                <PasteButton onClick={this.handlePaste} />
+                            </div>
                             <div className="col">
                                 <CopyButton onClick={this.handleCopy} />
                             </div>

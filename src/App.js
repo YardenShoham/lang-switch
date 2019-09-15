@@ -25,16 +25,16 @@ class App extends Component {
         );
 
     handleSelectFrom = e =>
-        this.setState(
-            { selectedOptionFrom: e.target.value },
-            this.languageChanged
-        );
+        this.setState({ selectedOptionFrom: e.target.value }, () => {
+            this.languageChanged();
+            this.setState({ toValue: Changer.change(this.state.fromValue) });
+        });
 
     handleSelectTo = e =>
-        this.setState(
-            { selectedOptionTo: e.target.value },
-            this.languageChanged
-        );
+        this.setState({ selectedOptionTo: e.target.value }, () => {
+            this.languageChanged();
+            this.setState({ toValue: Changer.change(this.state.fromValue) });
+        });
 
     handleSwap = () =>
         this.setState(
@@ -44,7 +44,12 @@ class App extends Component {
                 fromValue: this.state.toValue,
                 toValue: this.state.fromValue
             },
-            this.languageChanged
+            () => {
+                this.languageChanged();
+                this.setState({
+                    toValue: Changer.change(this.state.fromValue)
+                });
+            }
         );
 
     handleChange = e => {

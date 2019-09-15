@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import logo from "./logo.svg";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.css";
 import LanguagePair from "./components/LanguagePair";
@@ -11,6 +10,12 @@ class App extends Component {
         this.setState({ selectedOptionFrom: e.target.value });
 
     handleSelectTo = e => this.setState({ selectedOptionTo: e.target.value });
+
+    handleSwap = e =>
+        this.setState({
+            selectedOptionFrom: this.state.selectedOptionTo,
+            selectedOptionTo: this.state.selectedOptionFrom
+        });
 
     render() {
         const { selectedOptionFrom, selectedOptionTo } = this.state;
@@ -26,6 +31,7 @@ class App extends Component {
                         onChangeTo={this.handleSelectTo}
                         selectedOptionFrom={selectedOptionFrom}
                         selectedOptionTo={selectedOptionTo}
+                        onSwap={this.handleSwap}
                     />
                 </main>
             </React.Fragment>

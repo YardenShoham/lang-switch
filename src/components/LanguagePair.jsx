@@ -1,16 +1,18 @@
 import React from "react";
 import Select from "./common/Select";
+import SwapButton from "./common/SwapButton";
 
 const LanguagePair = ({
     options,
     selectedOptionFrom,
     onChangeFrom,
     selectedOptionTo,
-    onChangeTo
+    onChangeTo,
+    onSwap
 }) => {
     return (
-        <div className="row">
-            <div className="col-sm-6">
+        <div className="row center">
+            <div className="col-sm-3">
                 <Select
                     label="From"
                     options={options}
@@ -18,7 +20,10 @@ const LanguagePair = ({
                     onChange={onChangeFrom}
                 ></Select>
             </div>
-            <div className="col-sm-6">
+            <div className="col-sm-2">
+                <SwapButton onClick={onSwap} />
+            </div>
+            <div className="col-sm-3">
                 <Select
                     label="To"
                     options={options}

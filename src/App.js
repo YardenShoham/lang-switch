@@ -3,6 +3,7 @@ import "./App.css";
 import "bootstrap/dist/css/bootstrap.css";
 import LanguagePair from "./components/LanguagePair";
 import LanguageChanger from "./components/LanguageChanger";
+import Changer from "./utils/changeLanguage";
 
 class App extends Component {
     state = {
@@ -12,20 +13,45 @@ class App extends Component {
         toValue: ""
     };
 
+    languageChanged = () =>
+        Changer.init(
+            this.state.selectedOptionFrom,
+            this.state.selectedOptionTo
+        );
+
     handleSelectFrom = e =>
-        this.setState({ selectedOptionFrom: e.target.value });
+        this.setState(
+            { selectedOptionFrom: e.target.value },
+            this.languageChanged
+        );
 
-    handleSelectTo = e => this.setState({ selectedOptionTo: e.target.value });
+    handleSelectTo = e =>
+        this.setState(
+            { selectedOptionTo: e.target.value },
+            this.languageChanged
+        );
 
-    handleSwap = e =>
+    handleSwap = () =>
+        this.setState(
+            {
+                selectedOptionFrom: this.state.selectedOptionTo,
+                selectedOptionTo: this.state.selectedOptionFrom,
+                fromValue: this.state.toValue,
+                toValue: this.state.fromValue
+            },
+            this.languageChanged
+        );
+
+    handleChange = e => {
         this.setState({
-            selectedOptionFrom: this.state.selectedOptionTo,
-            selectedOptionTo: this.state.selectedOptionFrom,
-            fromValue: this.state.toValue,
-            toValue: this.state.fromValue
+            fromValue: e.target.value,
+            toValue: Changer.change(e.target.value)
         });
+    };
 
-    handleChange = e => {};
+    componentDidMount() {
+        this.languageChanged();
+    }
 
     render() {
         const {

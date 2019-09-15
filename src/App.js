@@ -8,7 +8,6 @@ import LanguageChanger from "./components/LanguageChanger";
 import Changer from "./utils/changeLanguage";
 import CopyButton from "./components/common/CopyButton";
 import PasteButton from "./components/common/PasteButton";
-import { async } from "q";
 
 class App extends Component {
     state = {
@@ -69,7 +68,7 @@ class App extends Component {
             await navigator.clipboard.writeText(this.state.toValue);
             toast.success("📃 Copied to clipboard!");
         } catch (ex) {
-            toast.error("Failed to copy.");
+            toast.error("⁉ Your browser doesn't support copy.");
         }
     };
 
@@ -84,7 +83,7 @@ class App extends Component {
                 }
             );
         } catch (ex) {
-            toast.error("Failed to paste.");
+            toast.error("⁉ Your browser doesn't support paste.");
         }
     };
 
@@ -101,7 +100,7 @@ class App extends Component {
         } = this.state;
         return (
             <React.Fragment>
-                <ToastContainer autoClose={2200} />
+                <ToastContainer autoClose={2600} />
                 <nav className="navbar navbar-dark bg-dark">
                     <span className="navbar-brand clickable">Lang Switch</span>
                 </nav>

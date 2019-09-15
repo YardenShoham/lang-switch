@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "fe95048b36d8913fca4bf4078ee6bd5f",
+    "revision": "11e125b927e8dd361ab64fb477215003",
     "url": "/lang-switch/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/lang-switch/static/css/2.22a7d4ef.chunk.css"
   },
   {
-    "revision": "38a9bf6ab180c60cdeb0",
+    "revision": "341220c8f56cb5305e98",
     "url": "/lang-switch/static/css/main.d38b1417.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/lang-switch/static/js/2.d9674daf.chunk.js"
   },
   {
-    "revision": "38a9bf6ab180c60cdeb0",
-    "url": "/lang-switch/static/js/main.8fe113f8.chunk.js"
+    "revision": "341220c8f56cb5305e98",
+    "url": "/lang-switch/static/js/main.66bd5412.chunk.js"
   },
   {
     "revision": "559b057ff7cdacde9147",

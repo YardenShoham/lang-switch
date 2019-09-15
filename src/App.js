@@ -13,6 +13,11 @@ class App extends Component {
         toValue: ""
     };
 
+    constructor() {
+        super();
+        this.languages = Object.keys(Changer.languages);
+    }
+
     languageChanged = () =>
         Changer.init(
             this.state.selectedOptionFrom,
@@ -67,7 +72,7 @@ class App extends Component {
                 </nav>
                 <main className="container">
                     <LanguagePair
-                        options={["Hebrew", "English"]}
+                        options={this.languages}
                         onChangeFrom={this.handleSelectFrom}
                         onChangeTo={this.handleSelectTo}
                         selectedOptionFrom={selectedOptionFrom}

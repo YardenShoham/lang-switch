@@ -40,21 +40,19 @@ class App extends Component {
                     <span className="navbar-brand clickable">Lang Switch</span>
                 </nav>
                 <main className="container">
-                    <form>
-                        <LanguagePair
-                            options={["Hebrew", "English"]}
-                            onChangeFrom={this.handleSelectFrom}
-                            onChangeTo={this.handleSelectTo}
-                            selectedOptionFrom={selectedOptionFrom}
-                            selectedOptionTo={selectedOptionTo}
-                            onSwap={this.handleSwap}
-                        />
-                        <LanguageChanger
-                            onChange={this.handleChange}
-                            fromValue={fromValue}
-                            toValue={toValue}
-                        />
-                    </form>
+                    <LanguagePair
+                        options={["Hebrew", "English"]}
+                        onChangeFrom={this.handleSelectFrom}
+                        onChangeTo={this.handleSelectTo}
+                        selectedOptionFrom={selectedOptionFrom}
+                        selectedOptionTo={selectedOptionTo}
+                        onSwap={this.handleSwap}
+                    />
+                    <LanguageChanger
+                        onChange={this.handleChange}
+                        fromValue={fromValue}
+                        toValue={toValue}
+                    />
                 </main>
             </React.Fragment>
         );

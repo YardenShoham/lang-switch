@@ -1,5 +1,5 @@
 import React from "react";
-import Select from "./common/Select";
+import Select from "./common/Select.jsx";
 import SwapButton from "./common/SwapButton";
 
 const LanguagePair = ({

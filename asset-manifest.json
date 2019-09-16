@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/lang-switch/static/css/main.d38b1417.chunk.css",
-    "main.js": "/lang-switch/static/js/main.d1aeb09e.chunk.js",
-    "main.js.map": "/lang-switch/static/js/main.d1aeb09e.chunk.js.map",
+    "main.css": "/lang-switch/static/css/main.e48bc9d5.chunk.css",
+    "main.js": "/lang-switch/static/js/main.d5205d62.chunk.js",
+    "main.js.map": "/lang-switch/static/js/main.d5205d62.chunk.js.map",
     "runtime~main.js": "/lang-switch/static/js/runtime~main.e94ba745.js",
     "runtime~main.js.map": "/lang-switch/static/js/runtime~main.e94ba745.js.map",
     "static/css/2.edc2e41f.chunk.css": "/lang-switch/static/css/2.edc2e41f.chunk.css",
-    "static/js/2.09df419d.chunk.js": "/lang-switch/static/js/2.09df419d.chunk.js",
-    "static/js/2.09df419d.chunk.js.map": "/lang-switch/static/js/2.09df419d.chunk.js.map",
+    "static/js/2.cfdf00d7.chunk.js": "/lang-switch/static/js/2.cfdf00d7.chunk.js",
+    "static/js/2.cfdf00d7.chunk.js.map": "/lang-switch/static/js/2.cfdf00d7.chunk.js.map",
     "index.html": "/lang-switch/index.html",
-    "precache-manifest.5281f9ba093eb84ce94e37282b7143c3.js": "/lang-switch/precache-manifest.5281f9ba093eb84ce94e37282b7143c3.js",
+    "precache-manifest.acf8b78ec5b7068038a264ba3ca3ee57.js": "/lang-switch/precache-manifest.acf8b78ec5b7068038a264ba3ca3ee57.js",
     "service-worker.js": "/lang-switch/service-worker.js",
     "static/css/2.edc2e41f.chunk.css.map": "/lang-switch/static/css/2.edc2e41f.chunk.css.map",
-    "static/css/main.d38b1417.chunk.css.map": "/lang-switch/static/css/main.d38b1417.chunk.css.map"
+    "static/css/main.e48bc9d5.chunk.css.map": "/lang-switch/static/css/main.e48bc9d5.chunk.css.map"
   }
 }

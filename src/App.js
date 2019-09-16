@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import DarkTheme from "react-dark-theme";
+import { AwesomeButtonSocial } from "react-awesome-button";
+import "react-awesome-button/dist/styles.css";
 import "react-toastify/dist/ReactToastify.min.css";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.css";
@@ -113,7 +115,9 @@ class App extends Component {
             <React.Fragment>
                 <ToastContainer autoClose={2000} hideProgressBar={true} />
                 <nav className="navbar navbar-dark bg-dark">
-                    <span className="navbar-brand clickable">Lang Switch</span>
+                    <a className="navbar-brand" href="/">
+                        Lang Switch
+                    </a>
                     <DarkTheme light={lightTheme} dark={darkTheme} />
                 </nav>
                 <main className="container">
@@ -140,6 +144,17 @@ class App extends Component {
                             </div>
                         </div>
                     </div>
+                    <AwesomeButtonSocial
+                        style={{
+                            position: "fixed",
+                            bottom: "1%",
+                            left: "0.5%"
+                        }}
+                        type="github"
+                        href="https://github.com/YardenShoham/lang-switch"
+                    >
+                        GitHub
+                    </AwesomeButtonSocial>
                 </main>
             </React.Fragment>
         );

@@ -8,6 +8,7 @@
         "@fortawesome/free-solid-svg-icons": "^5.10.2",
         "@fortawesome/react-fontawesome": "^0.1.4",
         "bootstrap": "^4.3.1",
+        "jsdoc": "^3.6.3",
         "react": "^16.9.0",
         "react-autosize-textarea": "^7.0.0",
         "react-awesome-button": "^6.1.2",
@@ -21,7 +22,7 @@
         "build": "react-scripts build",
         "test": "react-scripts test",
         "eject": "react-scripts eject",
-        "predeploy": "npm run build",
+        "predeploy": "jsdoc src -r -d docs && npm run build",
         "deploy": "gh-pages -d build"
     },
     "eslintConfig": {

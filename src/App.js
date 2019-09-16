@@ -111,7 +111,7 @@ class App extends Component {
         } = this.state;
         return (
             <React.Fragment>
-                <ToastContainer autoClose={2600} />
+                <ToastContainer autoClose={2000} hideProgressBar={true} />
                 <nav className="navbar navbar-dark bg-dark">
                     <span className="navbar-brand clickable">Lang Switch</span>
                     <DarkTheme light={lightTheme} dark={darkTheme} />

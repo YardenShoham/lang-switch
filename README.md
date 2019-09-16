@@ -1,8 +1,8 @@
 # Lang Switch
 
-<!-- [![JavaScript Style Guide](https://img.shields.io/badge/code_style-prettier-brightgreen.svg)](https://prettier.io) -->
-
-[![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
+[![Build Status](https://travis-ci.org/YardenShoham/lang-switch.svg?branch=master)](https://travis-ci.org/YardenShoham/lang-switch)
+[![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 You know when you want to write something in one language and when you look up from the keyboard you find out you wrote it in another language?
 That's when you go to [lang-switch](https://yardenshoham.github.io/lang-switch).

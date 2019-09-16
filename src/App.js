@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { ToastContainer, toast } from "react-toastify";
+import DarkTheme from "react-dark-theme";
 import "react-toastify/dist/ReactToastify.min.css";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.css";
@@ -9,10 +10,20 @@ import Changer from "./utils/changeLanguage";
 import CopyButton from "./components/common/CopyButton";
 import PasteButton from "./components/common/PasteButton";
 
+const lightTheme = {
+    background: "white",
+    text: "#161617"
+};
+
+const darkTheme = {
+    background: "#161617",
+    text: "white"
+};
+
 class App extends Component {
     state = {
-        selectedOptionFrom: "Hebrew",
-        selectedOptionTo: "English",
+        selectedOptionFrom: "English",
+        selectedOptionTo: "Hebrew",
         fromValue: "",
         toValue: ""
     };
@@ -103,6 +114,7 @@ class App extends Component {
                 <ToastContainer autoClose={2600} />
                 <nav className="navbar navbar-dark bg-dark">
                     <span className="navbar-brand clickable">Lang Switch</span>
+                    <DarkTheme light={lightTheme} dark={darkTheme} />
                 </nav>
                 <main className="container">
                     <LanguagePair

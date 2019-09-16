@@ -33,6 +33,12 @@
     align-items: center;
 }
 
+body {
+    transition: all 100ms ease-out;
+    background-color: var(--background) !important;
+    color: var(--text) !important;
+}
+
 @keyframes App-logo-spin {
     from {
         transform: rotate(0deg);

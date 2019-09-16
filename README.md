@@ -12,3 +12,5 @@ Enter the text you wrote into the "From" text box and get the text you intended 
 ## Link
 
 https://yardenshoham.github.io/lang-switch
+
+###### Built because a [friend](https://github.com/RonKatz1) keeps texting me without looking at the keyboard.

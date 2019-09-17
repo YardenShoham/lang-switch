@@ -2,11 +2,24 @@ import React from "react";
 import Select from "./common/Select";
 import SwapButton from "./common/SwapButton";
 
+/**
+ * Represents a pair of languages.
+ *
+ * This component is comprised of two Select elements (one for each language) and a Swap button to switch between them.
+ *
+ * General Look:
+ * <<From Language>> <<Swap Button>> <<To Language>>
+ *
+ * This component exists so the user can choose from which language to change to another language. It also allows for a quick swap between those.
+ *
+ * @param {Object} languagePairOptions An object with the following properties: languages, selectedLanguageFrom, onChangeFrom, selectedLanguageTo, onChangeTo, onSwap
+ * @returns {ReactComponent} The language pair component.
+ */
 const LanguagePair = ({
-    options,
-    selectedOptionFrom,
+    languages,
+    selectedLanguageFrom,
     onChangeFrom,
-    selectedOptionTo,
+    selectedLanguageTo,
     onChangeTo,
     onSwap
 }) => {
@@ -16,8 +29,8 @@ const LanguagePair = ({
                 <div className="col-sm-3">
                     <Select
                         label="From"
-                        options={options}
-                        selectedOption={selectedOptionFrom}
+                        options={languages}
+                        selectedOption={selectedLanguageFrom}
                         onChange={onChangeFrom}
                     ></Select>
                 </div>
@@ -27,8 +40,8 @@ const LanguagePair = ({
                 <div className="col-sm-3">
                     <Select
                         label="To"
-                        options={options}
-                        selectedOption={selectedOptionTo}
+                        options={languages}
+                        selectedOption={selectedLanguageTo}
                         onChange={onChangeTo}
                     ></Select>
                 </div>

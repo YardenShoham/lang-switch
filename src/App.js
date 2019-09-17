@@ -122,11 +122,11 @@ class App extends Component {
                 </nav>
                 <main className="container">
                     <LanguagePair
-                        options={this.languages}
+                        languages={this.languages}
                         onChangeFrom={this.handleSelectFrom}
                         onChangeTo={this.handleSelectTo}
-                        selectedOptionFrom={selectedOptionFrom}
-                        selectedOptionTo={selectedOptionTo}
+                        selectedLanguageFrom={selectedOptionFrom}
+                        selectedLanguageTo={selectedOptionTo}
                         onSwap={this.handleSwap}
                     />
                     <LanguageChanger

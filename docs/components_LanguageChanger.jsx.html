@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: components/common/SwapButton.jsx</title>
+    <title>JSDoc: Source: components/LanguageChanger.jsx</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: components/common/SwapButton.jsx</h1>
+    <h1 class="page-title">Source: components/LanguageChanger.jsx</h1>
 
     
 
@@ -27,29 +27,42 @@
     <section>
         <article>
             <pre class="prettyprint source linenums"><code>import React from "react";
-import { faExchangeAlt } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import TextareaAutosize from "react-autosize-textarea";
 
 /**
- * A button with a swap icon.
+ * A component that represents a change of language.
  *
- * @param {Object} props Props for a button.
- * @returns {ReactComponent} The swap button.
+ * It has two text areas, one enabled and the other - not.
+ *
+ * @param {Object} languageChangerOptions An object with the following properties: onChange, fromValue, toValue
+ * @returns {ReactComponent} The language changer component.
  */
-const SwapButton = ({ className: classes, ...props }) => {
+const LanguageChanger = ({ onChange, fromValue, toValue }) => {
     return (
-        &lt;button
-            {...props}
-            className={`btn btn-primary btn-lg btn-block ${
-                classes === undefined ? "" : classes
-            }`}
-        >
-            &lt;FontAwesomeIcon icon={faExchangeAlt} />
-        &lt;/button>
+        &lt;div className="form-group">
+            &lt;div className="row">
+                &lt;div className="col">
+                    &lt;TextareaAutosize
+                        onChange={onChange}
+                        dir="auto"
+                        className="form-control"
+                        value={fromValue}
+                    />
+                &lt;/div>
+                &lt;div className="col">
+                    &lt;TextareaAutosize
+                        dir="auto"
+                        className="form-control"
+                        value={toValue}
+                        disabled
+                    />
+                &lt;/div>
+            &lt;/div>
+        &lt;/div>
     );
 };
 
-export default SwapButton;
+export default LanguageChanger;
 </code></pre>
         </article>
     </section>

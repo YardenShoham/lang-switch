@@ -35,6 +35,7 @@ class Changer {
         const lowerInputText = inputText.toLowerCase();
         let outputText = "";
         let newChar;
+        // eslint-disable-next-line
         for (const letter of lowerInputText) {
             newChar = this.languageMap.get(letter);
             outputText += newChar === undefined ? letter : newChar;

@@ -1,5 +1,12 @@
 import React from "react";
 
+/**
+ * A controlled react select element.
+ *
+ * It has a label as well as an actual select element.
+ * @param {Object} selectOptions An object containing the label, options, selectedOption and onChange select attributes.
+ * @returns {ReactComponent} The rendered select element.
+ */
 const Select = ({ label, options, selectedOption, onChange }) => {
     return (
         <div className="form-group">

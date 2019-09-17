@@ -19,6 +19,7 @@
         "start": "react-scripts start",
         "build": "react-scripts build",
         "test": "react-scripts test",
+        "coverage": "set CI=true&&react-scripts test --coverage",
         "eject": "react-scripts eject",
         "doc": "jsdoc src -r -d docs",
         "predeploy": "npm run build",

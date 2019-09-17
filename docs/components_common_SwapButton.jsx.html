@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Home</title>
+    <title>JSDoc: Source: components/common/SwapButton.jsx</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,32 +17,42 @@
 
 <div id="main">
 
-    <h1 class="page-title">Home</h1>
+    <h1 class="page-title">Source: components/common/SwapButton.jsx</h1>
 
     
 
 
 
     
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import React from "react";
+import { faExchangeAlt } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
+/**
+ * A button with a swap icon.
+ *
+ * @param {Object} props Props for a button.
+ * @returns {ReactComponent} The swap button.
+ */
+const SwapButton = ({ className: classes, ...props }) => {
+    return (
+        &lt;button
+            {...props}
+            className={`btn btn-primary btn-lg btn-block ${
+                classes === undefined ? "" : classes
+            }`}
+        >
+            &lt;FontAwesomeIcon icon={faExchangeAlt} />
+        &lt;/button>
+    );
+};
 
-    <h3> </h3>
-
-
-
-
-
-
-
-
-
-
-    
-
-
-
-
-
+export default SwapButton;
+</code></pre>
+        </article>
+    </section>
 
 
 

@@ -3,7 +3,7 @@ import { faCopy } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 /**
- * A controlled button with a copy icon and a "Copy" text.
+ * A button with a copy icon and a "Copy" text.
  *
  * @param {Object} props Props for a button.
  * @returns {ReactComponent} The copy button.

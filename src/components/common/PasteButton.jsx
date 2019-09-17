@@ -3,7 +3,7 @@ import { faPaste } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 /**
- * A controlled button with a paste icon and a "Paste" text.
+ * A button with a paste icon and a "Paste" text.
  *
  * @param {Object} props Props for a button.
  * @returns {ReactComponent} The paste button.

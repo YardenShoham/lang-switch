@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Home</title>
+    <title>JSDoc: Source: components/common/PasteButton.jsx</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,32 +17,43 @@
 
 <div id="main">
 
-    <h1 class="page-title">Home</h1>
+    <h1 class="page-title">Source: components/common/PasteButton.jsx</h1>
 
     
 
 
 
     
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import React from "react";
+import { faPaste } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
+/**
+ * A controlled button with a paste icon and a "Paste" text.
+ *
+ * @param {Object} props Props for a button.
+ * @returns {ReactComponent} The paste button.
+ */
+const PasteButton = ({ className: classes, ...props }) => {
+    return (
+        &lt;button
+            {...props}
+            className={`btn btn-secondary ${
+                classes === undefined ? "" : classes
+            }`}
+        >
+            &lt;FontAwesomeIcon icon={faPaste} />
+            &lt;span> Paste&lt;/span>
+        &lt;/button>
+    );
+};
 
-    <h3> </h3>
-
-
-
-
-
-
-
-
-
-
-    
-
-
-
-
-
+export default PasteButton;
+</code></pre>
+        </article>
+    </section>
 
 
 

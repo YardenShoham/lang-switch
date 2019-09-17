@@ -1,6 +1,10 @@
 # Lang Switch
 
+![Linux](https://user-images.githubusercontent.com/20454870/65024120-e1bc7400-d93c-11e9-9cb2-eda8028e4ec7.png)
 [![Build Status](https://travis-ci.org/YardenShoham/lang-switch.svg?branch=master)](https://travis-ci.org/YardenShoham/lang-switch)
+![windows](https://user-images.githubusercontent.com/20454870/65024130-e2eda100-d93c-11e9-8975-c06ac099617f.png)
+[![Build status](https://ci.appveyor.com/api/projects/status/v9ra9cnbu3kavglx/branch/master?svg=true)](https://ci.appveyor.com/project/YardenShoham/lang-switch/branch/master)
+
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Inline docs](https://inch-ci.org/github/yardenshoham/lang-switch.svg?branch=master)](https://inch-ci.org/github/yardenshoham/lang-switch)

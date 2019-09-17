@@ -12,8 +12,8 @@ const CopyButton = ({ className: classes, ...props }) => {
     return (
         <button
             {...props}
-            className={`btn btn-secondary float-right ${
-                classes === undefined ? "" : classes
+            className={`btn btn-secondary float-right${
+                classes === undefined ? "" : ` ${classes}`
             }`}
         >
             <FontAwesomeIcon icon={faCopy} />

@@ -12,8 +12,8 @@ const PasteButton = ({ className: classes, ...props }) => {
     return (
         <button
             {...props}
-            className={`btn btn-secondary ${
-                classes === undefined ? "" : classes
+            className={`btn btn-secondary${
+                classes === undefined ? "" : ` ${classes}`
             }`}
         >
             <FontAwesomeIcon icon={faPaste} />

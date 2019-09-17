@@ -12,8 +12,8 @@ const SwapButton = ({ className: classes, ...props }) => {
     return (
         <button
             {...props}
-            className={`btn btn-primary btn-lg btn-block ${
-                classes === undefined ? "" : classes
+            className={`btn btn-primary btn-lg btn-block${
+                classes === undefined ? "" : ` ${classes}`
             }`}
         >
             <FontAwesomeIcon icon={faExchangeAlt} />

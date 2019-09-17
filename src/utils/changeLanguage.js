@@ -14,6 +14,9 @@ class Changer {
      * This map will be used for every change() call.
      * @param {String} fromLanguage The language to "change" from.
      * @param {String} toLanguage The destination language.
+     *
+     * @example
+     * init("English", "Hebrew")
      */
     init(fromLanguage, toLanguage) {
         this.languageMap = new Map();
@@ -29,6 +32,13 @@ class Changer {
      * Changes a given text according to the Map set with init().
      *
      * @param {String} inputText String to be "changed".
+     *
+     * @example
+     * // assuming init("English", "Hebrew") was called sometime in the past
+     * const changed = change("uutu thzv eus ndbhc")
+     * console.log(changed)
+     * // should print וואו איזה קוד מגניב
+     *
      * @returns {String} "Changed" text.
      */
     change(inputText) {

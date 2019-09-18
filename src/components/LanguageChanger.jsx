@@ -19,6 +19,7 @@ const LanguageChanger = ({ onChange, fromValue, toValue }) => {
                         dir="auto"
                         className="form-control"
                         value={fromValue}
+                        data-testid="from-textarea"
                     />
                 </div>
                 <div className="col">
@@ -27,6 +28,7 @@ const LanguageChanger = ({ onChange, fromValue, toValue }) => {
                         className="form-control"
                         value={toValue}
                         disabled
+                        data-testid="to-textarea"
                     />
                 </div>
             </div>

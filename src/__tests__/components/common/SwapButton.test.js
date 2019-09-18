@@ -30,11 +30,9 @@ describe("<SwapButton />", () => {
         const { container } = render(<SwapButton />);
         const innerButton = container.querySelector("button");
 
-        expect(innerButton).toHaveAttribute("aria-label");
-        expect(
-            innerButton.attributes
-                .getNamedItem("aria-label")
-                .value.match(/Swap/)
-        ).toBeTruthy();
+        expect(innerButton).toHaveAttribute(
+            "aria-label",
+            expect.stringContaining("Swap")
+        );
     });
 });

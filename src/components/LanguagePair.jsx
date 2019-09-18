@@ -35,7 +35,7 @@ const LanguagePair = ({
                     ></Select>
                 </div>
                 <div className="col-sm-2">
-                    <SwapButton onClick={onSwap} />
+                    <SwapButton data-testid="swap-button" onClick={onSwap} />
                 </div>
                 <div className="col-sm-3">
                     <Select

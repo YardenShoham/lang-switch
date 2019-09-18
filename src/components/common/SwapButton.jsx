@@ -12,6 +12,7 @@ const SwapButton = ({ className: classes, ...props }) => {
     return (
         <button
             {...props}
+            aria-label="Swap Button"
             className={`btn btn-primary btn-lg btn-block${
                 classes === undefined ? "" : ` ${classes}`
             }`}

@@ -1,9 +1,7 @@
-import { toHaveClass } from "@testing-library/jest-dom";
+import "@testing-library/jest-dom/extend-expect";
 import React from "react";
 import { render } from "@testing-library/react";
 import CopyButton from "./../../../components/common/CopyButton";
-
-expect.extend({ toHaveClass });
 
 describe("<CopyButton />", () => {
     it("should have a button with the btn, btn-secondary and float-right classes (exactly these 3) by default", () => {

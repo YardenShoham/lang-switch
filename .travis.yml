@@ -6,6 +6,7 @@ cache:
         - node_modules
 install:
     - npm install -g codecov
+    - npm install @testing-library/jest-dom
 notifications:
     email: false
 script:

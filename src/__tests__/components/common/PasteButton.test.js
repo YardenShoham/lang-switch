@@ -1,7 +1,9 @@
-import "@testing-library/jest-dom/extend-expect";
+import { toHaveClass } from "@testing-library/jest-dom";
 import React from "react";
 import { render } from "@testing-library/react";
 import PasteButton from "./../../../components/common/PasteButton";
+
+expect.extend({ toHaveClass });
 
 describe("<PasteButton />", () => {
     it("should have a button with the btn and btn-secondary classes (exactly these 2) by default", () => {

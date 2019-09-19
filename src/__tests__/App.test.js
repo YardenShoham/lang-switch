@@ -55,6 +55,7 @@ describe("<App />", () => {
     });
 
     it("should copy the text from the result to the clipboard and should be able to paste", () => {
+        jest.useFakeTimers();
         const { container, queryByTestId, getByText } = render(<App />);
         const selects = container.querySelectorAll("select");
         const selectFrom = selects[0];
@@ -68,8 +69,10 @@ describe("<App />", () => {
         const phrase = "hello, world!";
         userEvent.type(fromTextArea, phrase);
         userEvent.click(getByText("Copy"));
-        userEvent.type(fromTextArea, "");
+        userEvent.type(fromTextArea, "random text");
         userEvent.click(getByText("Paste"));
+
+        jest.advanceTimersByTime(100);
 
         const textInClipboard = fromTextArea.value;
         const toTextArea = queryByTestId("to-textarea");
@@ -78,8 +81,8 @@ describe("<App />", () => {
     });
 
     it("should display a message when the user clicks on the Copy Button", () => {
-        const { getByText, queryByRole } = render(<App />);
         jest.useFakeTimers();
+        const { getByText, queryByRole } = render(<App />);
 
         userEvent.click(getByText("Copy"));
 

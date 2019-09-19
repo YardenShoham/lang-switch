@@ -1,9 +1,10 @@
 import "@testing-library/jest-dom/extend-expect";
-import { render, fireEvent } from "@testing-library/react";
+import { render, fireEvent, queryByRole } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import React from "react";
 import ReactDOM from "react-dom";
 import App from "../App";
+import fs from "fs";
 
 describe("<App />", () => {
     it("renders without crashing", () => {
@@ -77,12 +78,19 @@ describe("<App />", () => {
     });
 
     it("should display a message when the user clicks on the Copy Button", () => {
-        const { getByText, queryByText } = render(<App />);
+        const { getByText, queryByRole } = render(<App />);
+        jest.useFakeTimers();
+
         userEvent.click(getByText("Copy"));
 
         // it takes a bit to appear
-        setTimeout(() => {
-            expect(queryByText(/copied/i)).not.toBeNull();
-        }, 500);
+        jest.advanceTimersByTime(500);
+
+        const message = queryByRole("alert");
+
+        expect(message).not.toBeNull();
+        expect(message.textContent).toStrictEqual(
+            expect.stringMatching(/[copied|copy]/i)
+        );
     });
 });

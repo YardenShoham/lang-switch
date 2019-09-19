@@ -80,20 +80,30 @@ describe("<App />", () => {
         expect(toTextArea.value).toBe(textInClipboard);
     });
 
-    it("should display a message when the user clicks on the Copy Button", () => {
-        jest.useFakeTimers();
-        const { getByText, queryByRole } = render(<App />);
+    describe("Copy Button", () => {
+        beforeAll(() => {
+            global.navigator = {
+                clipboard: {
+                    writeText: Promise.resolve
+                }
+            };
+        });
 
-        userEvent.click(getByText("Copy"));
+        it("should display a message when the user clicks on it", () => {
+            jest.useFakeTimers();
+            const { getByText, queryByRole } = render(<App />);
 
-        // it takes a bit to appear
-        jest.advanceTimersByTime(500);
+            userEvent.click(getByText("Copy"));
 
-        const message = queryByRole("alert");
+            // it takes a bit to appear
+            jest.advanceTimersByTime(500);
 
-        expect(message).not.toBeNull();
-        expect(message.textContent).toStrictEqual(
-            expect.stringMatching(/[copied|copy]/i)
-        );
+            const message = queryByRole("alert");
+
+            expect(message).not.toBeNull();
+            expect(message.textContent).toStrictEqual(
+                expect.stringMatching(/[copied|copy]/i)
+            );
+        });
     });
 });

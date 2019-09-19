@@ -75,4 +75,14 @@ describe("<App />", () => {
 
         expect(toTextArea.value).toBe(textInClipboard);
     });
+
+    it("should display a message when the user clicks on the Copy Button", () => {
+        const { getByText, queryByText } = render(<App />);
+        userEvent.click(getByText("Copy"));
+
+        // it takes a bit to appear
+        setTimeout(() => {
+            expect(queryByText(/copied/i)).not.toBeNull();
+        }, 500);
+    });
 });

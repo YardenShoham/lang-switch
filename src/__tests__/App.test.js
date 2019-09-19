@@ -52,4 +52,27 @@ describe("<App />", () => {
 
         expect(toTextArea).toHaveValue("this is nice");
     });
+
+    it("should copy the text from the result to the clipboard and should be able to paste", () => {
+        const { container, queryByTestId, getByText } = render(<App />);
+        const selects = container.querySelectorAll("select");
+        const selectFrom = selects[0];
+        const selectTo = selects[1];
+
+        userEvent.selectOptions(selectFrom, "English");
+        userEvent.selectOptions(selectTo, "English");
+
+        const fromTextArea = queryByTestId("from-textarea");
+
+        const phrase = "hello, world!";
+        userEvent.type(fromTextArea, phrase);
+        userEvent.click(getByText("Copy"));
+        userEvent.type(fromTextArea, "");
+        userEvent.click(getByText("Paste"));
+
+        const textInClipboard = fromTextArea.value;
+        const toTextArea = queryByTestId("to-textarea");
+
+        expect(toTextArea.value).toBe(textInClipboard);
+    });
 });

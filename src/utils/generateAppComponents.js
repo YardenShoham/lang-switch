@@ -12,6 +12,11 @@ const darkTheme = {
     text: "white"
 };
 
+/**
+ * Generates a button the redirects to the repository.
+ *
+ * @returns {ReactComponent} The button.
+ */
 function gitHubButton() {
     return (
         <AwesomeButtonSocial
@@ -28,6 +33,13 @@ function gitHubButton() {
     );
 }
 
+/**
+ * Generates the navigation bar that appears atop the page.
+ *
+ * It includes a link to the home page and a toggle button to toggle dark theme.
+ *
+ * @returns {ReactComponent} The navigation bar.
+ */
 function navbar() {
     return (
         <nav className="navbar navbar-dark bg-dark">
@@ -38,6 +50,7 @@ function navbar() {
         </nav>
     );
 }
+
 export default {
     gitHubButton,
     navbar

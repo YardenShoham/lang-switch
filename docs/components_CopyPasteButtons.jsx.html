@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: components/common/PasteButton.jsx</title>
+    <title>JSDoc: Source: components/CopyPasteButtons.jsx</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: components/common/PasteButton.jsx</h1>
+    <h1 class="page-title">Source: components/CopyPasteButtons.jsx</h1>
 
     
 
@@ -27,27 +27,35 @@
     <section>
         <article>
             <pre class="prettyprint source linenums"><code>import React from "react";
-import { faPaste } from "@fortawesome/free-solid-svg-icons";
-import ClipboardButton from "./ClipboardButton";
+import CopyButton from "./common/CopyButton";
+import PasteButton from "./common/PasteButton";
 
 /**
- * A button with a paste icon and a "Paste" text.
+ * A component that has both a Copy and Paste buttons.
  *
- * @param {Object} props Props for a button.
- * @returns {ReactComponent} The paste button.
+ * General Look:
+ * &lt;&lt;Paste Button>>           &lt;&lt;Copy Button>>
+ *
+ * @param {function} onCopy The function that will be called when the Copy button is clicked.
+ * @param {function} onPaste The function that will be called when the Paste button is clicked.
+ * @returns {ReactComponent} The set of buttons.
  */
-const PasteButton = props => {
+const CopyPasteButtons = ({ onCopy, onPaste }) => {
     return (
-        &lt;ClipboardButton
-            {...props}
-            baseClasses="btn btn-secondary"
-            label="Paste"
-            icon={faPaste}
-        />
+        &lt;div className="form-group">
+            &lt;div className="row">
+                &lt;div className="col">
+                    &lt;PasteButton onClick={onPaste} />
+                &lt;/div>
+                &lt;div className="col">
+                    &lt;CopyButton onClick={onCopy} />
+                &lt;/div>
+            &lt;/div>
+        &lt;/div>
     );
 };
 
-export default PasteButton;
+export default CopyPasteButtons;
 </code></pre>
         </article>
     </section>

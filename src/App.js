@@ -34,13 +34,15 @@ class App extends Component {
             this.state.selectedOptionTo
         );
 
+    newLanguageSelected = () => {
+        this.languageChanged();
+        this.setState({ toValue: Changer.change(this.state.fromValue) });
+    };
+
     handleSelect = (selectedOption, e) => {
         let newState = {};
         newState[selectedOption] = e.target.value;
-        this.setState(newState, () => {
-            this.languageChanged();
-            this.setState({ toValue: Changer.change(this.state.fromValue) });
-        });
+        this.setState(newState, this.newLanguageSelected);
     };
 
     handleSelectFrom = e => this.handleSelect("selectedOptionFrom", e);
@@ -55,12 +57,7 @@ class App extends Component {
                 fromValue: this.state.toValue,
                 toValue: this.state.fromValue
             },
-            () => {
-                this.languageChanged();
-                this.setState({
-                    toValue: Changer.change(this.state.fromValue)
-                });
-            }
+            this.newLanguageSelected
         );
 
     handleChange = e => {

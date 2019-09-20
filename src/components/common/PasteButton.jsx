@@ -1,6 +1,6 @@
 import React from "react";
 import { faPaste } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import ClipboardButton from "./ClipboardButton";
 
 /**
  * A button with a paste icon and a "Paste" text.
@@ -8,17 +8,14 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
  * @param {Object} props Props for a button.
  * @returns {ReactComponent} The paste button.
  */
-const PasteButton = ({ className: classes, ...props }) => {
+const PasteButton = props => {
     return (
-        <button
+        <ClipboardButton
             {...props}
-            className={`btn btn-secondary${
-                classes === undefined ? "" : ` ${classes}`
-            }`}
-        >
-            <FontAwesomeIcon icon={faPaste} />
-            <span> Paste</span>
-        </button>
+            baseClasses="btn btn-secondary"
+            label="Paste"
+            icon={faPaste}
+        />
     );
 };
 

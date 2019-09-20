@@ -1,6 +1,6 @@
 import React from "react";
+import ClipboardButton from "./ClipboardButton";
 import { faCopy } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 /**
  * A button with a copy icon and a "Copy" text.
@@ -8,17 +8,14 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
  * @param {Object} props Props for a button.
  * @returns {ReactComponent} The copy button.
  */
-const CopyButton = ({ className: classes, ...props }) => {
+const CopyButton = props => {
     return (
-        <button
+        <ClipboardButton
             {...props}
-            className={`btn btn-secondary float-right${
-                classes === undefined ? "" : ` ${classes}`
-            }`}
-        >
-            <FontAwesomeIcon icon={faCopy} />
-            <span> Copy</span>
-        </button>
+            baseClasses="btn btn-secondary float-right"
+            label="Copy"
+            icon={faCopy}
+        />
     );
 };
 

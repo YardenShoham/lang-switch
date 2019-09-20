@@ -26,25 +26,21 @@ const LanguagePair = ({
     return (
         <div className="form-group">
             <div className="row center">
-                <div className="col-sm-3">
-                    <Select
-                        label="From"
-                        options={languages}
-                        selectedOption={selectedLanguageFrom}
-                        onChange={onChangeFrom}
-                    ></Select>
-                </div>
+                <Select
+                    label="From"
+                    options={languages}
+                    selectedOption={selectedLanguageFrom}
+                    onChange={onChangeFrom}
+                />
                 <div className="col-sm-2">
                     <SwapButton data-testid="swap-button" onClick={onSwap} />
                 </div>
-                <div className="col-sm-3">
-                    <Select
-                        label="To"
-                        options={languages}
-                        selectedOption={selectedLanguageTo}
-                        onChange={onChangeTo}
-                    ></Select>
-                </div>
+                <Select
+                    label="To"
+                    options={languages}
+                    selectedOption={selectedLanguageTo}
+                    onChange={onChangeTo}
+                />
             </div>
         </div>
     );

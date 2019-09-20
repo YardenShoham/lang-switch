@@ -34,17 +34,18 @@ class App extends Component {
             this.state.selectedOptionTo
         );
 
-    handleSelectFrom = e =>
-        this.setState({ selectedOptionFrom: e.target.value }, () => {
+    handleSelect = (selectedOption, e) => {
+        let newState = {};
+        newState[selectedOption] = e.target.value;
+        this.setState(newState, () => {
             this.languageChanged();
             this.setState({ toValue: Changer.change(this.state.fromValue) });
         });
+    };
 
-    handleSelectTo = e =>
-        this.setState({ selectedOptionTo: e.target.value }, () => {
-            this.languageChanged();
-            this.setState({ toValue: Changer.change(this.state.fromValue) });
-        });
+    handleSelectFrom = e => this.handleSelect("selectedOptionFrom", e);
+
+    handleSelectTo = e => this.handleSelect("selectedOptionTo", e);
 
     handleSwap = () =>
         this.setState(

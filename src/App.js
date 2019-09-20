@@ -1,26 +1,19 @@
 import React, { Component } from "react";
-import { ToastContainer, toast } from "react-toastify";
-import DarkTheme from "react-dark-theme";
-import { AwesomeButtonSocial } from "react-awesome-button";
+import { toast } from "react-toastify";
 import "react-awesome-button/dist/styles.css";
 import "react-toastify/dist/ReactToastify.min.css";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.css";
 import LanguagePair from "./components/LanguagePair";
 import LanguageChanger from "./components/LanguageChanger";
+import CopyPasteButtons from "./components/CopyPasteButtons";
 import Changer from "./utils/changeLanguage";
-import CopyButton from "./components/common/CopyButton";
-import PasteButton from "./components/common/PasteButton";
+import generate from "./utils/generateAppComponents";
 
-const lightTheme = {
-    background: "white",
-    text: "#161617"
-};
-
-const darkTheme = {
-    background: "#161617",
-    text: "white"
-};
+toast.configure({
+    autoClose: 2000,
+    hideProgressBar: true
+});
 
 class App extends Component {
     state = {
@@ -104,61 +97,38 @@ class App extends Component {
         }
     };
 
+    languagePairProps = () => {
+        return {
+            languages: this.languages,
+            onChangeFrom: this.handleSelectFrom,
+            onChangeTo: this.handleSelectTo,
+            selectedLanguageFrom: this.state.selectedOptionFrom,
+            selectedLanguageTo: this.state.selectedOptionTo,
+            onSwap: this.handleSwap
+        };
+    };
+
     componentDidMount() {
         this.languageChanged();
     }
 
     render() {
-        const {
-            selectedOptionFrom,
-            selectedOptionTo,
-            fromValue,
-            toValue
-        } = this.state;
+        const { fromValue, toValue } = this.state;
         return (
             <React.Fragment>
-                <ToastContainer autoClose={2000} hideProgressBar={true} />
-                <nav className="navbar navbar-dark bg-dark">
-                    <a className="navbar-brand" href="/">
-                        Lang Switch
-                    </a>
-                    <DarkTheme light={lightTheme} dark={darkTheme} />
-                </nav>
+                {generate.navbar()}
                 <main className="container">
-                    <LanguagePair
-                        languages={this.languages}
-                        onChangeFrom={this.handleSelectFrom}
-                        onChangeTo={this.handleSelectTo}
-                        selectedLanguageFrom={selectedOptionFrom}
-                        selectedLanguageTo={selectedOptionTo}
-                        onSwap={this.handleSwap}
-                    />
+                    <LanguagePair {...this.languagePairProps()} />
                     <LanguageChanger
                         onChange={this.handleChange}
                         fromValue={fromValue}
                         toValue={toValue}
                     />
-                    <div className="form-group">
-                        <div className="row">
-                            <div className="col">
-                                <PasteButton onClick={this.handlePaste} />
-                            </div>
-                            <div className="col">
-                                <CopyButton onClick={this.handleCopy} />
-                            </div>
-                        </div>
-                    </div>
-                    <AwesomeButtonSocial
-                        style={{
-                            position: "fixed",
-                            bottom: "1%",
-                            left: "0.5%"
-                        }}
-                        type="github"
-                        href="https://github.com/YardenShoham/lang-switch"
-                    >
-                        GitHub
-                    </AwesomeButtonSocial>
+                    <CopyPasteButtons
+                        onCopy={this.handleCopy}
+                        onPaste={this.handlePaste}
+                    />
+                    {generate.gitHubButton()}
                 </main>
             </React.Fragment>
         );

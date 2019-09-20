@@ -79,14 +79,17 @@ class App extends Component {
     handleCopy = async () => {
         try {
             await navigator.clipboard.writeText(this.state.toValue);
+            /* istanbul ignore next */
             toast.success("📃 Copied to clipboard!");
         } catch (ex) {
+            /* istanbul ignore next */
             toast.error("⁉ Your browser doesn't support copy.");
         }
     };
 
     handlePaste = async () => {
         try {
+            /* istanbul ignore next */
             this.setState(
                 { fromValue: await navigator.clipboard.readText() },
                 () => {
@@ -96,6 +99,7 @@ class App extends Component {
                 }
             );
         } catch (ex) {
+            /* istanbul ignore next */
             toast.error("⁉ Your browser doesn't support paste.");
         }
     };

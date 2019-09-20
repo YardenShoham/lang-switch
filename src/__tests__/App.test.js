@@ -4,7 +4,6 @@ import userEvent from "@testing-library/user-event";
 import React from "react";
 import ReactDOM from "react-dom";
 import App from "../App";
-import fs from "fs";
 
 describe("<App />", () => {
     it("renders without crashing", () => {
@@ -78,32 +77,5 @@ describe("<App />", () => {
         const toTextArea = queryByTestId("to-textarea");
 
         expect(toTextArea.value).toBe(textInClipboard);
-    });
-
-    describe("Copy Button", () => {
-        beforeAll(() => {
-            global.navigator = {
-                clipboard: {
-                    writeText: Promise.resolve
-                }
-            };
-        });
-
-        it("should display a message when the user clicks on it", () => {
-            jest.useFakeTimers();
-            const { getByText, queryByRole } = render(<App />);
-
-            userEvent.click(getByText("Copy"));
-
-            // it takes a bit to appear
-            jest.advanceTimersByTime(500);
-
-            const message = queryByRole("alert");
-
-            expect(message).not.toBeNull();
-            expect(message.textContent).toStrictEqual(
-                expect.stringMatching(/[copied|copy]/i)
-            );
-        });
     });
 });

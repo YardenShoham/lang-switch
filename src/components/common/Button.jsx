@@ -2,12 +2,12 @@ import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 /**
- * A button with an icon and a text.
+ * A button with an icon and an optional label.
  *
  * @param {Object} props Props for a button.
  * @returns {ReactComponent} The actual button.
  */
-const ClipboardButton = ({ baseClasses, label, icon, ...props }) => {
+const Button = ({ baseClasses, label, icon, ...props }) => {
     return (
         <button
             {...props}
@@ -17,9 +17,9 @@ const ClipboardButton = ({ baseClasses, label, icon, ...props }) => {
             }
         >
             <FontAwesomeIcon icon={icon} />
-            <span> {label}</span>
+            {label && <span> {label}</span>}
         </button>
     );
 };
 
-export default ClipboardButton;
+export default Button;

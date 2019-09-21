@@ -1,5 +1,5 @@
 import React from "react";
-import ClipboardButton from "./ClipboardButton";
+import Button from "./Button";
 import { faCopy } from "@fortawesome/free-solid-svg-icons";
 
 /**
@@ -10,7 +10,7 @@ import { faCopy } from "@fortawesome/free-solid-svg-icons";
  */
 const CopyButton = props => {
     return (
-        <ClipboardButton
+        <Button
             {...props}
             baseClasses="btn btn-secondary float-right"
             label="Copy"

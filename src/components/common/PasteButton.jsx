@@ -1,6 +1,6 @@
 import React from "react";
 import { faPaste } from "@fortawesome/free-solid-svg-icons";
-import ClipboardButton from "./ClipboardButton";
+import Button from "./Button";
 
 /**
  * A button with a paste icon and a "Paste" text.
@@ -10,7 +10,7 @@ import ClipboardButton from "./ClipboardButton";
  */
 const PasteButton = props => {
     return (
-        <ClipboardButton
+        <Button
             {...props}
             baseClasses="btn btn-secondary"
             label="Paste"

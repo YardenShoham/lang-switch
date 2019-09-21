@@ -1,6 +1,7 @@
 import React from "react";
 import { faExchangeAlt } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Button from "./Button";
 
 /**
  * A button with a swap icon.
@@ -8,17 +9,14 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
  * @param {Object} props Props for a button.
  * @returns {ReactComponent} The swap button.
  */
-const SwapButton = ({ className: classes, ...props }) => {
+const SwapButton = props => {
     return (
-        <button
+        <Button
             {...props}
             aria-label="Swap Button"
-            className={`btn btn-primary btn-lg btn-block${
-                classes === undefined ? "" : ` ${classes}`
-            }`}
-        >
-            <FontAwesomeIcon icon={faExchangeAlt} />
-        </button>
+            baseClasses="btn btn-primary btn-lg btn-block"
+            icon={faExchangeAlt}
+        />
     );
 };
 

@@ -12,7 +12,6 @@
 [![Maintainability](https://api.codeclimate.com/v1/badges/036fe3e2421f29f791a9/maintainability)](https://codeclimate.com/github/YardenShoham/lang-switch/maintainability)
 [![Known Vulnerabilities](https://snyk.io/test/github/yardenshoham/lang-switch/badge.svg)](https://snyk.io/test/github/yardenshoham/lang-switch)
 
-[![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com)
 
 You know when you want to write something in one language and when you look up from the keyboard you find out you wrote it in another language?

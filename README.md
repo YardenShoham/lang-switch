@@ -10,6 +10,7 @@
 [![Inline docs](https://inch-ci.org/github/yardenshoham/lang-switch.svg?branch=master)](https://inch-ci.org/github/yardenshoham/lang-switch)
 [![codecov](https://codecov.io/gh/YardenShoham/lang-switch/branch/master/graph/badge.svg)](https://codecov.io/gh/YardenShoham/lang-switch)
 [![Maintainability](https://api.codeclimate.com/v1/badges/036fe3e2421f29f791a9/maintainability)](https://codeclimate.com/github/YardenShoham/lang-switch/maintainability)
+[![Known Vulnerabilities](https://snyk.io/test/github/yardenshoham/lang-switch/badge.svg)](https://snyk.io/test/github/yardenshoham/lang-switch)
 
 [![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com)

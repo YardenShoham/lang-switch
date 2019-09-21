@@ -11,18 +11,4 @@ describe("<CopyButton />", () => {
         expect(innerButton).toHaveClass("btn", "btn-secondary", "float-right");
         expect(Object.keys(innerButton.classList).length).toBe(3);
     });
-
-    it("should have a button with additional classes when provided", () => {
-        const classes = "class1 class2 class3";
-        const { container } = render(<CopyButton className={classes} />);
-        const innerButton = container.querySelector("button");
-
-        expect(innerButton).toHaveClass(...classes.split(/ /));
-    });
-
-    it('should have a text showing the word "Copy"', () => {
-        const { queryByText } = render(<CopyButton />);
-
-        expect(queryByText(/Copy/)).not.toBeNull();
-    });
 });

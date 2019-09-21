@@ -16,17 +16,18 @@ describe("<App />", () => {
         const { container, queryByTestId } = render(<App />);
         const swapButton = queryByTestId("swap-button");
         const selects = container.querySelectorAll("select");
-        const selectedLanguagesBeforeSwap = [
-            selects[0].options[selects[0].selectedIndex].text,
-            selects[1].options[selects[1].selectedIndex].text
-        ];
+
+        function currentLanguages() {
+            return [
+                selects[0].options[selects[0].selectedIndex].text,
+                selects[1].options[selects[1].selectedIndex].text
+            ];
+        }
+        const selectedLanguagesBeforeSwap = currentLanguages();
 
         userEvent.click(swapButton);
 
-        const selectedLanguagesAfterSwap = [
-            selects[0].options[selects[0].selectedIndex].text,
-            selects[1].options[selects[1].selectedIndex].text
-        ];
+        const selectedLanguagesAfterSwap = currentLanguages();
 
         expect(selectedLanguagesBeforeSwap[0]).toBe(
             selectedLanguagesAfterSwap[1]

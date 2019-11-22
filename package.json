@@ -10,7 +10,7 @@
         "bootstrap": "^4.3.1",
         "react": "^16.9.0",
         "react-autosize-textarea": "^7.0.0",
-        "react-awesome-button": "^6.1.2",
+        "react-awesome-button": "^6.3.1",
         "react-dark-theme": "^1.1.1",
         "react-dom": "^16.9.0",
         "react-scripts": "3.1.1",

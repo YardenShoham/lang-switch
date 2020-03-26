@@ -8,7 +8,7 @@
         "@fortawesome/free-solid-svg-icons": "^5.13.0",
         "@fortawesome/react-fontawesome": "^0.1.9",
         "bootstrap": "^4.4.1",
-        "react": "^16.13.0",
+        "react": "^16.13.1",
         "react-autosize-textarea": "^7.0.0",
         "react-awesome-button": "^6.5.1",
         "react-dark-theme": "^1.1.1",

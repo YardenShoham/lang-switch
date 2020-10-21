@@ -13,7 +13,7 @@
         "react-awesome-button": "^6.5.1",
         "react-dark-theme": "^1.1.1",
         "react-dom": "^16.13.1",
-        "react-scripts": "3.4.3",
+        "react-scripts": "3.4.4",
         "react-toastify": "^6.0.9"
     },
     "scripts": {

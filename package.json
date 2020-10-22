@@ -12,7 +12,7 @@
         "react-autosize-textarea": "^7.1.0",
         "react-awesome-button": "^6.5.1",
         "react-dark-theme": "^1.1.1",
-        "react-dom": "^16.13.1",
+        "react-dom": "^16.14.0",
         "react-scripts": "3.4.4",
         "react-toastify": "^6.0.9"
     },
